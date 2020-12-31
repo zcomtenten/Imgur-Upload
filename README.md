@@ -9,3 +9,6 @@ new Imgur({
     callback: feedback 
 });
 ```
+
+## Demo
+[Demo](https://upanh.tech/)
