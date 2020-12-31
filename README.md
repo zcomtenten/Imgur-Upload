@@ -11,4 +11,4 @@ new Imgur({
 ```
 
 ## Demo
-[Demo](https://upanh.tech/)
+Click [Demo](https://upanh.tech/) to view now.
