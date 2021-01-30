@@ -4,7 +4,6 @@
 body{
     font-family: 'Roboto', sans-serif;
     position: relative;
-    font-weight: 400;
     font-style: normal;
     margin: 0;
     padding: 0;
@@ -13,21 +12,21 @@ body.loading .loading-modal {
     display: block;
 }
 .title {
-    font-size: 2vw;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-    color: inherit;
+    font-size: 1.7vw;
+    padding: 30px 0;
+    margin: 0 0 30px 0;
     background-color: #eee;
-    margin-left: auto;
-    margin-left: auto;
     text-align: center;
     text-decoration: none;
 }
-.title h1{
-    font-size: 1.5em !important;
+.title h1 {
+    font-size: 1.5em;
+    font-weight: 500;
 }
-.title h1, .title p,.title a {
+.title p {
+    font-size: 0.7em;
+}
+.title h1, .title p, .title a {
     color: #000;
     text-decoration: none;
 }
@@ -39,8 +38,7 @@ body.loading .loading-modal {
     border: 4px dashed #ccc;
     height: 200px;
     position: relative;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
     max-width: 50%;
 }
 .info {
@@ -64,8 +62,7 @@ body.loading .loading-modal {
     border-radius: 5px;
     text-align: center;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 .image-url {
     width: 50%;
@@ -87,11 +84,8 @@ body.loading .loading-modal {
     width: 100%;
 }
 .loading-table {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15%;
-    margin-bottom: 15%;
+    margin: 15% auto;
 }
 .img {
-    width: 70%;
+    width: 60%;
 }

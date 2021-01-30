@@ -1,8 +1,11 @@
 @charset "UTF-8";
 /* Mobile view */
 @media screen and (min-width: 300px) and (max-width: 700px) {
-	.jumbotron p{
-		font-size: 1.2em !important;
+	.title h1 {
+		font-size: 6vw !important;
+	}
+	.title p {
+		font-size: 1.5em !important;
 	}
 	.dropzone {
 		max-width: 70%;
