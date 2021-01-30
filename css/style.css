@@ -12,21 +12,26 @@ body{
 body.loading .loading-modal {
     display: block;
 }
-.jumbotron {
+.title {
     font-size: 2vw;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
     margin-left: auto;
     margin-left: auto;
     text-align: center;
     text-decoration: none;
 }
-.jumbotron h1{
+.title h1{
     font-size: 1.5em !important;
 }
-.jumbotron h1, .jumbotron p,.jumbotron a {
+.title h1, .title p,.title a {
     color: #000;
     text-decoration: none;
 }
-.jumbotron h1:hover, .jumbotron a:hover {
+.title h1:hover, .title a:hover {
     color: #3588DE;
     text-decoration: none;
 }
