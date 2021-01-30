@@ -11,8 +11,8 @@ body{
 body.loading .loading-modal {
     display: block;
 }
-p{
-    margin: 0;
+p {
+    margin: 10px 0;
 }
 .title {
     font-size: 1.7vw;
