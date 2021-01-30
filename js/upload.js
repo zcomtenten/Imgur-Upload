@@ -19,8 +19,8 @@ var feedback = function(res) {
         var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
         document.querySelector('.status').classList.add('bg-success');
         var content = `Image:<br>
-                            Link: <input class="image-url" value="${get_link}"/>
-                            Bbcode: <textarea cols="5" rows="2">[img]${get_link}[/img]</textarea>
+                            Link: <input class="image-url" value="${get_link}"/><br>
+                            Bbcode: <textarea cols="5" rows="10">[img]${get_link}[/img]</textarea>
                             <img class="img" alt="Imgur-Upload" src="${get_link}"/>`;
         addImg('.status', content);
     }
