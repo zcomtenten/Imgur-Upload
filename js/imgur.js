@@ -1,5 +1,4 @@
-/*jslint browser: true, debug: true*/
-/*global define, module, exports*/
+/* Imgur Upload Script */
 (function (root, factory) {
     "use strict";
     if (typeof define === 'function' && define.amd) {
@@ -21,13 +20,14 @@
         }
 
         if (!options.clientid) {
-            throw 'Provide a valid Client Id here: https://apidocs.imgur.com/';
+            throw 'Provide a valid Client Id here: https://api.imgur.com/';
         }
 
         this.clientid = options.clientid;
         this.endpoint = 'https://api.imgur.com/3/image';
         this.callback = options.callback || undefined;
         this.dropzone = document.querySelectorAll('.dropzone');
+        this.info = document.querySelectorAll('.info');
 
         this.run();
     };
@@ -72,25 +72,31 @@
             xhttp = null;
         },
         createDragZone: function () {
-            var p, input;
+            var p1, p2, input;
 
-            p     = this.createEls('p', {}, 'Drag your files here or click in this area.');
-            input = this.createEls('input', {type: 'file', multiple: 'multiple', accept: 'image/*'});
+                p1 = this.createEls('p', {}, 'Drag your files here');
+                p2 = this.createEls('p', {}, 'or click in this area.');
+            input = this.createEls('input', {type: 'file', multiple: 'multiple', className: 'input', accept: 'image/*'});
 
+            Array.prototype.forEach.call(this.info, function (zone) {
+                zone.appendChild(p1);
+                zone.appendChild(p2);
+            }.bind(this));
             Array.prototype.forEach.call(this.dropzone, function (zone) {
-                zone.appendChild(p);
                 zone.appendChild(input);
                 this.status(zone);
                 this.upload(zone);
             }.bind(this));
         },
         loading: function () {
-            var div, img;
+            var div, table, img;
 
             div = this.createEls('div', {className: 'loading-modal'});
-            img = this.createEls('img', {className: 'loading-image', src: './assets/loading.svg'});
+            table = this.createEls('table', {className: 'loading-table'});
+            img = this.createEls('img', {className: 'loading-image', src: './css/loading-spin.svg'});
 
-            div.appendChild(img);
+            div.appendChild(table);
+            table.appendChild(img);
             document.body.appendChild(div);
         },
         status: function (el) {
@@ -102,7 +108,7 @@
             var status = zone.nextSibling;
 
             if (file.type.match(/image/) && file.type !== 'image/svg+xml') {
-                document.body.classList.add('busy');
+                document.body.classList.add('loading');
                 status.classList.remove('bg-success', 'bg-danger');
                 status.innerHTML = '';
 
@@ -110,7 +116,7 @@
                 fd.append('image', file);
 
                 this.post(this.endpoint, fd, function (data) {
-                    document.body.classList.remove('busy');
+                    document.body.classList.remove('loading');
                     typeof this.callback === 'function' && this.callback.call(this, data);
                 }.bind(this));
             } else {
