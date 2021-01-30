@@ -72,6 +72,7 @@ body.loading .loading-modal {
 }
 .bg-success {
     margin-top: 10px !important;
+    padding: 10px 0;
 }
 .loading-modal {
     background-color: rgba(255, 255, 255, .8);
@@ -87,5 +88,6 @@ body.loading .loading-modal {
     margin: 15% auto;
 }
 .img {
+    margin: 10px auto;
     width: 60%;
 }
