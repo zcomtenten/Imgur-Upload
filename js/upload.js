@@ -20,7 +20,7 @@ var feedback = function(res) {
         document.querySelector('.status').classList.add('bg-success');
         var content = `Image:<br>
                             Link: <input class="image-url" value="${get_link}"/><br>
-                            Bbcode: <textarea cols="5" rows="10">[img]${get_link}[/img]</textarea>
+                            Bbcode: <input class="image-url" value="\[img\]${get_link}\[\/img\]"/><br>
                             <img class="img" alt="Imgur-Upload" src="${get_link}"/>`;
         addImg('.status', content);
     }
