@@ -12,15 +12,15 @@ function addImg(ele, content) {
         myDIV.appendChild(newContent.firstChild);
     }
 }
-
 var feedback = function(res) {
     reportInfo(res, true);
     if (res.success === true) {
         var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
         document.querySelector('.status').classList.add('bg-success');
         var content = `<p>Image:</p>
-                       <p>Link: <input class="image" value="${get_link}"/></p>
-                       <p>Bbcode: <input class="image" value="\[img\]${get_link}\[\/img\]"/></p><hr>
+                       <p>Link: <input class="image" value="${get_link}" onclick="this.select();"/></p>
+                       <p>Bbcode: <input class="image" value="\[img\]${get_link}\[\/img\]" onclick="this.select();"/></p>
+                       <p>Markdown: <input class="image" value="![](${get_link})" onclick="this.select();"/></p><hr>
                        <p><img class="img" alt="Imgur-Upload" src="${get_link}"/></p>`;
         addImg('.status', content);
     }
